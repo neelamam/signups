@@ -4,9 +4,7 @@ populateTable = function(data) {
     $("#tableBody").empty();
 
     var tableTemplate, outputString;
-    tableTemplate = "<tr>" +
-        "<td class=\"text-center\">{{ID}}</td>" + "<td class=\"text-center\">{{Name}}</td>" + "<td class=\"text-center\">{{Email}}</td>" + "<td class=\"text-center\">{{City}}</td>" +
-        "</tr>";
+    tableTemplate = "<tr>" + "<td class=\"text-center\">{{ID}}</td>" + "<td class=\"text-center\">{{Name}}</td>" + "<td class=\"text-center\">{{Email}}</td>" + "<td class=\"text-center\">{{City}}</td>" + "</tr>";
     outputString = "";
     data = JSON.parse(data);
     for (var i = 0; i < data.length; i++) {
