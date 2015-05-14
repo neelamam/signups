@@ -81,7 +81,6 @@ $(document).ready(function() {
     });
 
     $(".form-control").keypress(function() {
-        console.log("yo");
         $(this).parent().removeClass("has-error");
     });
 

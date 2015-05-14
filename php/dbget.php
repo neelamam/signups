@@ -1,13 +1,12 @@
 <?php
 
-    $servername = getenv('IP');
-    $username = getenv('C9_USER');
-    $password = "";
-    $database = "c9";
-    $dbport = 3306;
+    $servername = "localhost";
+    $database = "nofbzcsj_signups";
+    $username = "nofbzcsj_purger";
+    $password = "Th1sPasswordIsOnGithub";
     
     // Create connection
-    $db = new mysqli($servername, $username, $password, $database, $dbport);
+    $db = new mysqli($servername, $username, $password, $database);
 
     // Check connection
     if ($db->connect_error) {
