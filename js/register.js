@@ -25,11 +25,11 @@ putData = function(name, city, email, anon) {
     var urlstring = "?name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email) + "&city=" + encodeURIComponent(city) + "&anon=" + encodeURIComponent(anon);
     $.get("php/dbput.php" + urlstring, function(result) {
         if (result == "1") {
-            console.log("Success");
+            $(".alert-success").fadeIn();
             getData();
         }
         else {
-
+            $(".alert-warning").show();
         }
     });
 }
@@ -58,11 +58,13 @@ isEmpty = function(inputId) {
 
 $(document).ready(function() {
 
+    $(".alert").hide();
     getData();
 
     $("#submitReg").click(function(e) {
 
         e.preventDefault();
+        $(".alert").hide();
         var name, email, city, anon, urlstring;
         name = $("#nameInput1").val();
         email = $("#emailInput1").val();
@@ -70,10 +72,9 @@ $(document).ready(function() {
         anon = $("#anonInput1").is(':checked') ? "true" : "false";
 
         if (inputHasEmptyFields()) {
-            console.log("empty fields");
+            $(".alert-danger").show();
         }
         else {
-            console.log("no empty fields");
             putData(name, city, email, anon);
         }
 
